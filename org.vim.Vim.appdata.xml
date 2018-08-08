@@ -25,7 +25,7 @@ SentUpstream: 2014-05-22
     </p>
   </description>
   <releases>
-    <release version="v8.0.1608" date="2018-03-14">
+    <release version="v8.1.0255" date="2018-08-08">
       <description>Initial Flathub release of most recent available version.</description>
     </release>
   </releases>
