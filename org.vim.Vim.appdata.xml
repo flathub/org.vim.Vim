@@ -25,7 +25,7 @@ SentUpstream: 2014-05-22
     </p>
   </description>
   <releases>
-    <release version="v8.1.0279" date="2018-08-13">
+    <release version="v8.1.0280" date="2018-08-13">
       <description>
         <p>The main new feature of Vim 8.1 is support for running a terminal in a Vim window. A few new features have been added since Vim 8.0. A lot of bugs have been fixed, documentation was updated, etc.</p>
       </description>
