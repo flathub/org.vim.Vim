@@ -1,6 +1,5 @@
 {
   "app-id": "org.vim.Vim",
-  "branch": "stable",
   "runtime": "org.freedesktop.Platform",
   "runtime-version": "1.6",
   "sdk": "org.freedesktop.Sdk",
