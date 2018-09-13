@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import argparse
+import collections
 import json
 import os
 import re
@@ -27,7 +28,7 @@ def main():
     args = parser.parse_args()
 
     with open(MANIFEST, 'r') as f:
-        manifest = json.load(f)
+        manifest = json.load(f, object_pairs_hook=collections.OrderedDict)
 
     vim_source = manifest['modules'][-1]['sources'][0]
 
