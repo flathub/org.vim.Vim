@@ -79,7 +79,7 @@ def main():
     f(('git', 'checkout', '-b', branch))
     f(('git', 'commit', '-am', 'Update to {}'.format(tag)))
     f(('git', 'push', '-u', args.remote, branch))
-    f(('hub', 'pull-request'))
+    f(('hub', 'pull-request', '--no-edit'))
 
 
 if __name__ == '__main__':
