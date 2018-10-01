@@ -5,6 +5,7 @@ import json
 import os
 import re
 import subprocess
+import textwrap
 
 HERE = os.path.abspath(os.path.dirname(__file__))
 VIM_CLONE = os.path.join(HERE, 'vim')
@@ -79,7 +80,11 @@ def main():
     f(('git', 'checkout', '-b', branch))
     f(('git', 'commit', '-am', 'Update to {}'.format(tag)))
     f(('git', 'push', '-u', args.remote, branch))
-    f(('hub', 'pull-request', '--no-edit'))
+    f(('hub', 'pull-request', '--no-edit', '-m', textwrap.dedent('''
+       Update to {}
+
+       <i>(This pull request was automatically generated.)</i>
+       ''').strip().format(tag)))
 
 
 if __name__ == '__main__':
