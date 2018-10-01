@@ -50,6 +50,7 @@ def main():
     os.chdir(HERE)
 
     # Patch manifest
+    old_tag = vim_source['tag']
     vim_source['tag'] = tag
     vim_source['commit'] = sha
     manifest['modules'][-1]['sources'][0] = vim_source
@@ -81,10 +82,16 @@ def main():
     f(('git', 'commit', '-am', 'Update to {}'.format(tag)))
     f(('git', 'push', '-u', args.remote, branch))
     f(('hub', 'pull-request', '--no-edit', '-m', textwrap.dedent('''
-       Update to {}
+       Update to {tag}
+
+       Upstream changes: {url}/compare/{old_tag}...{tag}
 
        <i>(This pull request was automatically generated.)</i>
-       ''').strip().format(tag)))
+       ''').strip().format(
+           tag=tag,
+           old_tag=old_tag,
+           url=vim_source['url'],
+       )))
 
 
 if __name__ == '__main__':
