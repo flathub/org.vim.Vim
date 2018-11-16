@@ -1,7 +1,7 @@
 {
   "app-id": "org.vim.Vim",
   "runtime": "org.freedesktop.Platform",
-  "runtime-version": "1.6",
+  "runtime-version": "18.08",
   "sdk": "org.freedesktop.Sdk",
   "command": "vim",
   "cleanup": [
@@ -34,7 +34,7 @@
         "--enable-gtk3-check",
         "--enable-luainterp",
         "--enable-multibyte",
-        "--enable-python3interp",
+        "--enable-python3interp=dynamic",
         "--enable-xim",
         "--enable-xsmp",
         "--enable-xsmp-interact",
