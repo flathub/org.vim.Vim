@@ -34,7 +34,7 @@
         "--enable-gtk3-check",
         "--enable-luainterp",
         "--enable-multibyte",
-        "--enable-python3interp",
+        "--enable-python3interp=dynamic",
         "--enable-xim",
         "--enable-xsmp",
         "--enable-xsmp-interact",
