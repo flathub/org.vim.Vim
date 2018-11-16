@@ -17,6 +17,7 @@
     "--filesystem=/tmp",
     "--filesystem=/var/tmp",
     "--share=ipc",
+    "--share=network",
     "--socket=x11",
     "--socket=wayland"
   ],
