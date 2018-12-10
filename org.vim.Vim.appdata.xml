@@ -25,7 +25,7 @@ SentUpstream: 2014-05-22
     </p>
   </description>
   <releases>
-    <release version="v8.1.0560" date="2018-12-02">
+    <release version="v8.1.0575-1-gd47d52232" date="2018-12-09">
       <description>
         <p>The latest upstream commit.</p>
       </description>
