@@ -1,0 +1,46 @@
+From ba3c3c22ea1f52f8df4fe87acb375adaa8f7c378 Mon Sep 17 00:00:00 2001
+From: Will Thompson <will@willthompson.co.uk>
+Date: Mon, 8 Apr 2019 09:14:22 +0100
+Subject: [PATCH] gvim.desktop: fix translation syntax
+
+Commit 723dd946f94856be94a943876945fb1bd8169059 did not use the correct
+syntax for the translation of GenericName into Icelandic, which means
+the desktop file is malformed:
+
+    $ desktop-file-validate runtime/*.desktop
+    runtime/gvim.desktop: error: file contains key "GenericName[is}" in
+    group "Desktop Entry", but key names must contain only the
+    characters A-Za-z0-9- (they may have a "[LOCALE]" postfix)
+
+Fix this by using the correct syntax for the locale postfix.
+
+Based on https://github.com/vim/vim/pull/4179 and the fact that
+vim.desktop contains the same translation, with the correct syntax, I
+infer that these files are maintained by hand. xgettext is able to
+extract translatable strings from .desktop files these days; many
+projects keep *.desktop.in in their source tree (without translations)
+and merge the translations at build time using `msgfmt --desktop`. See
+https://blogs.gnome.org/mclasen/2016/07/21/using-modern-gettext/ for
+details.
+
+Upstream: https://github.com/vim/vim/pull/4222
+---
+ runtime/gvim.desktop | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/runtime/gvim.desktop b/runtime/gvim.desktop
+index 945bfb9bc..095ddb564 100644
+--- a/runtime/gvim.desktop
++++ b/runtime/gvim.desktop
+@@ -6,7 +6,7 @@ GenericName[de]=Texteditor
+ GenericName[eo]=Tekstoredaktilo
+ GenericName[fr]=Éditeur de texte
+ GenericName[pl]=Edytor tekstu
+-GenericName[is}=Ritvinnsluforrit
++GenericName[is]=Ritvinnsluforrit
+ Comment=Edit text files
+ Comment[af]=Redigeer tekslêers
+ Comment[am]=የጽሑፍ ፋይሎች ያስተካክሉ
+-- 
+2.20.1
+
