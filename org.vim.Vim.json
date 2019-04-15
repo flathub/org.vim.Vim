@@ -64,8 +64,8 @@
         {
           "type": "git",
           "url": "https://github.com/vim/vim",
-          "tag": "v8.1.1137",
-          "commit": "049736fa8af211886848d4a847b45d5d991c9687"
+          "tag": "v8.1.1174",
+          "commit": "8dc4c7292364d31cfb8afa8a67984b78b657b192"
         },
         {
           "type": "file",
@@ -78,10 +78,6 @@
         {
           "type": "file",
           "path": "vim128x128.png"
-        },
-        {
-          "type": "patch",
-          "path": "gvim.desktop-fix-translation-syntax.patch"
         }
       ]
     }
