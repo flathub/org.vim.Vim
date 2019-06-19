@@ -59,7 +59,9 @@
         "install -D -m644 vim64x64.png /app/share/icons/hicolor/64x64/apps/org.vim.Vim.png",
         "install -D -m644 vim128x128.png /app/share/icons/hicolor/128x128/apps/org.vim.Vim.png",
         "desktop-file-edit --set-icon='org.vim.Vim' /app/share/applications/org.vim.Vim.desktop",
-        "desktop-file-edit --set-icon='org.vim.Vim' /app/share/applications/org.vim.Vim.GVim.desktop"
+        "desktop-file-edit --set-icon='org.vim.Vim' /app/share/applications/org.vim.Vim.GVim.desktop",
+        "install -D -m755 forward-to-host /app/bin/forward-to-host",
+        "ln -s /app/bin/forward-to-host /app/bin/git"
       ],
       "sources": [
         {
@@ -79,6 +81,10 @@
         {
           "type": "file",
           "path": "vim128x128.png"
+        },
+        {
+          "type": "file",
+          "path": "forward-to-host"
         }
       ]
     }
