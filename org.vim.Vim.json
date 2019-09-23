@@ -61,7 +61,7 @@
         "desktop-file-edit --set-icon='org.vim.Vim' /app/share/applications/org.vim.Vim.desktop",
         "desktop-file-edit --set-icon='org.vim.Vim' /app/share/applications/org.vim.Vim.GVim.desktop",
         "install -D -m755 forward-to-host /app/bin/forward-to-host",
-        "ln -s /app/bin/forward-to-host /app/bin/git"
+        "install -D -m755 git /app/bin/git"
       ],
       "sources": [
         {
@@ -85,6 +85,10 @@
         {
           "type": "file",
           "path": "forward-to-host"
+        },
+        {
+          "type": "file",
+          "path": "git"
         }
       ]
     }
