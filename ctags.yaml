@@ -1,0 +1,6 @@
+name: ctags
+sources:
+  - type: git
+    url: https://github.com/universal-ctags/ctags
+    # No releases! Nice.
+    commit: 42b74d5dbe70dc315e650fb4d2b5acaa19db114e
