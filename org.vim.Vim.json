@@ -67,8 +67,8 @@
         {
           "type": "git",
           "url": "https://github.com/vim/vim",
-          "tag": "v8.2.0132",
-          "commit": "ca33eb256eb910af05e8c9852bc9f716cece1f5c"
+          "tag": "v8.2.0158",
+          "commit": "3f169ce17e8b779d105c96138a8b4246f2d270b9"
         },
         {
           "type": "file",
