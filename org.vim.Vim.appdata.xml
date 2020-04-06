@@ -24,7 +24,7 @@ SentUpstream: 2014-05-22
     </p>
   </description>
   <releases>
-    <release version="v8.2.0480" date="2020-03-29">
+    <release version="v8.2.0520" date="2020-04-05">
       <description>
         <p>The latest upstream commit.</p>
       </description>
