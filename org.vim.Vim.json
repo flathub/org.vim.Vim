@@ -68,7 +68,14 @@
           "type": "git",
           "url": "https://github.com/vim/vim",
           "tag": "v8.2.2072",
-          "commit": "004d9b00ba600a167746ad7af88e0baa77c95d8f"
+          "commit": "004d9b00ba600a167746ad7af88e0baa77c95d8f",
+          "x-checker-data": {
+            "type": "json",
+            "url": "https://api.github.com/repos/vim/vim/tags",
+            "tag-query": "first | .name",
+            "version-query": "$tag | sub(\"^[vV]\"; \"\")",
+            "commit-query": "first | .commit.sha"
+          }
         },
         {
           "type": "file",
