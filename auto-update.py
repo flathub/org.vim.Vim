@@ -77,21 +77,13 @@ def main():
         return
 
     branch = 'update-to-{}'.format(tag)
+    title = f"Update to {tag}"
+    body = f"Upstream changes: {vim_source['url']}/compare/{old_tag}...{tag}"
     f = dry_run if args.dry_run else run
     f(('git', 'checkout', '-b', branch))
-    f(('git', 'commit', '-am', 'Update to {}'.format(tag)))
-    f(('git', 'push', '-u', args.remote, branch))
-    f(('hub', 'pull-request', '--no-edit', '-m', textwrap.dedent('''
-       Update to {tag}
-
-       Upstream changes: {url}/compare/{old_tag}...{tag}
-
-       <i>(This pull request was automatically generated.)</i>
-       ''').strip().format(
-           tag=tag,
-           old_tag=old_tag,
-           url=vim_source['url'],
-       )))
+    f(('git', 'commit', '-am', title + "\n\n" + body))
+    f(("git", "push", "-u", args.remote, branch))
+    f(("gh", "pr", "create", "--title", title, "--body", body))
 
 
 if __name__ == '__main__':

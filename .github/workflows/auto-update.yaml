@@ -1,0 +1,27 @@
+name: Auto-update
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 0 1 * *"
+
+jobs:
+  update-manifest:
+    name: Update manifest for latest Git tag
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out org.vim.Vim
+        uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Set credentials for gh CLI
+        run: |
+          mkdir -p ~/.config/gh
+          echo "{'github.com': {'user': '${{ github.actor }}', 'oauth_token': '${{ secrets.GITHUB_TOKEN }}'}}" > ~/.config/gh/hosts.yml
+      - id: auto-update
+        name: Run auto-update.py
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email actions@github.com
+          ./auto-update.py
