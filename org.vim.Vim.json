@@ -1,7 +1,7 @@
 {
   "app-id": "org.vim.Vim",
   "runtime": "org.freedesktop.Platform",
-  "runtime-version": "20.08",
+  "runtime-version": "21.08",
   "sdk": "org.freedesktop.Sdk",
   "command": "vim",
   "cleanup": [
@@ -67,8 +67,8 @@
         {
           "type": "git",
           "url": "https://github.com/vim/vim",
-          "tag": "v8.2.4277",
-          "commit": "68854a82fdedebf6ee0675d1abeae6fc627ff6bb"
+          "tag": "v8.2.4859",
+          "commit": "3a974a89331182139e12386275f052a50c247ecb"
         },
         {
           "type": "file",
