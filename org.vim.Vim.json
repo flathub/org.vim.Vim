@@ -22,7 +22,7 @@
     "--talk-name=org.freedesktop.Flatpak"
   ],
   "modules": [
-    "shared-modules/lua5.3/lua-5.3.5.json",
+    "shared-modules/lua5.4/lua-5.4.json",
     {
       "name": "vim",
       "build-options": {
