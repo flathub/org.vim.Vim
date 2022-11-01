@@ -4,14 +4,6 @@
   "runtime-version": "22.08",
   "sdk": "org.freedesktop.Sdk",
   "command": "vim",
-  "cleanup": [
-    "/include",
-    "/lib/debug",
-    "/lib/*.a",
-    "/lib/*.la",
-    "/lib/pkgconfig",
-    "/share/man"
-  ],
   "finish-args": [
     "--filesystem=host",
     "--filesystem=/tmp",
@@ -60,6 +52,9 @@
         "desktop-file-edit --set-icon='org.vim.Vim' /app/share/applications/org.vim.Vim.desktop",
         "desktop-file-edit --set-icon='org.vim.Vim' /app/share/applications/org.vim.Vim.GVim.desktop",
         "install -D -m755 forward-to-host /app/bin/forward-to-host"
+      ],
+      "cleanup": [
+        "/share/man"
       ],
       "sources": [
         {
