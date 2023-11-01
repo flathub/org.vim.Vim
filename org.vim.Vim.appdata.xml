@@ -4,10 +4,11 @@
 EmailAddress: Bram@moolenaar.net>
 SentUpstream: 2014-05-22
 -->
-<application>
-  <id type="desktop">org.vim.Vim.desktop</id>
+<component type="desktop-application">
+  <id>org.vim.Vim.desktop</id>
   <name>Vim</name>
   <summary>The ubiquitous text editor</summary>
+  <developer_name>Bram Moolenaar et al.</developer_name>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>Vim</project_license>
   <description>
@@ -24,7 +25,7 @@ SentUpstream: 2014-05-22
     </p>
   </description>
   <releases>
-    <release version="v9.0.1677" date="2023-07-09">
+    <release version="v9.0.2081" date="2023-10-28">
       <description>
         <p>The latest upstream commit.</p>
       </description>
@@ -35,6 +36,17 @@ SentUpstream: 2014-05-22
       <image>https://raw.githubusercontent.com/zdohnal/vim/zdohnal-screenshot/gvim16_9.png</image>
     </screenshot>
   </screenshots>
-  <url type="homepage">http://www.vim.org/</url>
+  <url type="homepage">https://www.vim.org/</url>
+  <url type="bugtracker">https://github.com/vim/vim/issues</url>
+  <url type="faq">https://vimhelp.org/vim_faq.txt.html</url>
+  <url type="help">https://www.vim.org/docs.php</url>
+  <url type="donation">https://www.vim.org/sponsor/index.php</url>
+  <url type="translate">https://github.com/vim/vim/blob/master/CONTRIBUTING.md#translations</url>
+  <url type="contact">https://www.vim.org/community.php</url>
+  <url type="vcs-browser">https://github.com/vim/vim</url>
+  <url type="contribute">https://github.com/vim/vim/blob/master/CONTRIBUTING.md</url>
+
   <content_rating type="oars-1.1"/>
-</application>
+
+  <launchable type="desktop-id">org.vim.Vim.desktop</launchable>
+</component>
