@@ -25,7 +25,7 @@ SentUpstream: 2014-05-22
     </p>
   </description>
   <releases>
-    <release version="v9.1.0384" date="2024-04-30">
+    <release version="v9.1.0454-1-gbad9577b9" date="2024-05-31">
       <description>
         <p>The latest upstream commit.</p>
       </description>
