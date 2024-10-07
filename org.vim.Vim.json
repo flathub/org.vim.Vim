@@ -1,7 +1,7 @@
 {
   "app-id": "org.vim.Vim",
   "runtime": "org.freedesktop.Sdk",
-  "runtime-version": "23.08",
+  "runtime-version": "24.08",
   "sdk": "org.freedesktop.Sdk",
   "command": "vim",
   "finish-args": [
@@ -35,7 +35,6 @@
         "--disable-icon-cache-update",
         "--disable-gnome-check",
         "--disable-motif-check",
-        "--disable-athena-check",
         "--disable-fontset",
         "--with-lua-prefix=/app",
         "--with-x"
@@ -62,6 +61,10 @@
           "url": "https://github.com/vim/vim",
           "tag": "v9.1.0751",
           "commit": "b50bc9ad55ecda07d5909e7057a6e777cd7e9b97"
+        },
+        {
+          "type": "patch",
+          "path": "Use-PNGs-for-window-icons-not-XPMs.patch"
         },
         {
           "type": "file",
