@@ -1,0 +1,63 @@
+From 74ac9089118ac22df1590e156a7c47fb25cb5407 Mon Sep 17 00:00:00 2001
+From: Will Thompson <will@willthompson.co.uk>
+Date: Mon, 7 Oct 2024 15:01:06 +0100
+Subject: [PATCH] Use PNGs for window icons, not XPMs
+
+The xpm loader for gdk-pixbuf is no longer enabled by default.
+---
+ src/gui_gtk_res.xml |  4 ++++
+ src/gui_gtk_x11.c   | 14 ++++----------
+ 2 files changed, 8 insertions(+), 10 deletions(-)
+
+diff --git a/src/gui_gtk_res.xml b/src/gui_gtk_res.xml
+index d6c7a592b..6d9a48b3b 100644
+--- a/src/gui_gtk_res.xml
++++ b/src/gui_gtk_res.xml
+@@ -14,5 +14,9 @@
+         <file>stock_vim_window_minimize_width.png</file>
+         <file>stock_vim_window_split.png</file>
+         <file>stock_vim_window_split_vertical.png</file>
++
++        <file alias="vim32x32.png">../runtime/vim32x32.png</file>
++        <file alias="vim16x16.png">../runtime/vim16x16.png</file>
++        <file alias="vim48x48.png">../runtime/vim48x48.png</file>
+     </gresource>
+ </gresources>
+diff --git a/src/gui_gtk_x11.c b/src/gui_gtk_x11.c
+index 6c97d1a19..cd5d4c7a9 100644
+--- a/src/gui_gtk_x11.c
++++ b/src/gui_gtk_x11.c
+@@ -2704,10 +2704,6 @@ global_event_filter(GdkXEvent *xev,
+     static void
+ mainwin_realize(GtkWidget *widget UNUSED, gpointer data UNUSED)
+ {
+-#include "../runtime/vim32x32.xpm"
+-#include "../runtime/vim16x16.xpm"
+-#include "../runtime/vim48x48.xpm"
+-
+     GdkWindow * const mainwin_win = gtk_widget_get_window(gui.mainwin);
+ 
+     // When started with "--echo-wid" argument, write window ID on stdout.
+@@ -2727,15 +2723,13 @@ mainwin_realize(GtkWidget *widget UNUSED, gpointer data UNUSED)
+ 	 */
+ 	GList *icons = NULL;
+ 
+-	icons = g_list_prepend(icons, gdk_pixbuf_new_from_xpm_data((const char **)vim16x16));
+-	icons = g_list_prepend(icons, gdk_pixbuf_new_from_xpm_data((const char **)vim32x32));
+-	icons = g_list_prepend(icons, gdk_pixbuf_new_from_xpm_data((const char **)vim48x48));
++	icons = g_list_prepend(icons, gdk_pixbuf_new_from_resource("/org/vim/gui/icon/vim16x16.png", NULL));
++	icons = g_list_prepend(icons, gdk_pixbuf_new_from_resource("/org/vim/gui/icon/vim32x32.png", NULL));
++	icons = g_list_prepend(icons, gdk_pixbuf_new_from_resource("/org/vim/gui/icon/vim48x48.png", NULL));
+ 
+ 	gtk_window_set_icon_list(GTK_WINDOW(gui.mainwin), icons);
+ 
+-	// TODO: is this type cast OK?
+-	g_list_foreach(icons, (GFunc)(void *)&g_object_unref, NULL);
+-	g_list_free(icons);
++	g_list_free_full(icons, g_object_unref);
+     }
+ 
+ #if !defined(USE_GNOME_SESSION)
+-- 
+2.39.5
+
