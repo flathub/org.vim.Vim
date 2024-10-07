@@ -35,7 +35,6 @@
         "--disable-icon-cache-update",
         "--disable-gnome-check",
         "--disable-motif-check",
-        "--disable-athena-check",
         "--disable-fontset",
         "--with-lua-prefix=/app",
         "--with-x"
