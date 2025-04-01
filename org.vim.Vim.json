@@ -63,10 +63,6 @@
           "commit": "71f17fdd5f7bb05d78876b4db297824054377363"
         },
         {
-          "type": "patch",
-          "path": "Use-PNGs-for-window-icons-not-XPMs.patch"
-        },
-        {
           "type": "file",
           "path": "org.vim.Vim.appdata.xml"
         },
