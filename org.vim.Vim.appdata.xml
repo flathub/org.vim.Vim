@@ -25,7 +25,7 @@ SentUpstream: 2014-05-22
     </p>
   </description>
   <releases>
-    <release version="v9.1.1815-1-g21d40d2d4" date="2025-09-30">
+    <release version="v9.1.1942" date="2025-11-30">
       <description>
         <p>The latest upstream commit.</p>
       </description>
@@ -34,6 +34,7 @@ SentUpstream: 2014-05-22
   <screenshots>
     <screenshot type="default">
       <image>https://raw.githubusercontent.com/zdohnal/vim/zdohnal-screenshot/gvim16_9.png</image>
+      <caption>The GVim main window</caption>
     </screenshot>
   </screenshots>
   <url type="homepage">https://www.vim.org/</url>
