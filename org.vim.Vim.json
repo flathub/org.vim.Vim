@@ -12,10 +12,12 @@
     "--share=network",
     "--socket=wayland",
     "--socket=fallback-x11",
+    "--socket=pulseaudio",
     "--talk-name=org.freedesktop.Flatpak"
   ],
   "modules": [
     "shared-modules/lua5.4/lua-5.4.json",
+    "shared-modules/libcanberra/libcanberra.json",
     {
       "name": "vim",
       "build-options": {
