@@ -63,7 +63,11 @@
           "type": "git",
           "url": "https://github.com/vim/vim",
           "tag": "v9.2.1161",
-          "commit": "86cfe56b30b6dce8fdba047c79beb3d701addc63"
+          "commit": "86cfe56b30b6dce8fdba047c79beb3d701addc63",
+          "x-checker-data": {
+            "type": "git",
+            "tag-pattern": "^v([\\d.]+)$"
+          }
         },
         {
           "type": "file",
