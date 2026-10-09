@@ -65,8 +65,10 @@
           "tag": "v9.2.1161",
           "commit": "86cfe56b30b6dce8fdba047c79beb3d701addc63",
           "x-checker-data": {
-            "type": "git",
-            "tag-pattern": "^v([\\d.]+)$"
+            "type": "json",
+            "url": "https://api.github.com/repos/vim/vim/tags",
+            "tag-query": "first | .name",
+            "version-query": "$tag | sub(\"^[vV]\"; \"\")"
           }
         },
         {
