@@ -69,7 +69,10 @@
             "type": "json",
             "url": "https://api.github.com/repos/vim/vim/tags",
             "tag-query": "first | .name",
-            "version-query": "$tag | sub(\"^[vV]\"; \"\")"
+            "version-query": "$tag | sub(\"^[vV]\"; \"\")",
+            "timestamp-data-url": "first | .commit.url",
+            "timestamp-query": ".commit.committer.date",
+            "is-main-source": true
           }
         },
         {
