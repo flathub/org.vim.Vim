@@ -1,7 +1,7 @@
 name: Check for updates
 on:
   schedule:
-    - cron: "0 4 1 * *"
+    - cron: "46 4 12 * *"
   workflow_dispatch:
 
 permissions:
