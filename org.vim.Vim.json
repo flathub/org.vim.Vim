@@ -54,7 +54,8 @@
         "install -D -m644 vim128x128.png /app/share/icons/hicolor/128x128/apps/org.vim.Vim.png",
         "desktop-file-edit --set-icon='org.vim.Vim' /app/share/applications/org.vim.Vim.desktop",
         "desktop-file-edit --set-icon='org.vim.Vim' /app/share/applications/org.vim.Vim.GVim.desktop",
-        "install -D -m755 forward-to-host /app/bin/forward-to-host"
+        "install -D -m755 forward-to-host /app/bin/forward-to-host",
+        "for d in /app/share/vim/vim*/lang/*/LC_MESSAGES; do l=$(basename \"$(dirname \"$d\")\"); mkdir -p /app/share/locale/$l; mv \"$d\" /app/share/locale/$l/; ln -s ../../../../locale/$l/LC_MESSAGES \"$d\"; done"
       ],
       "cleanup": [
         "/share/man"
